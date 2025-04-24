@@ -4,17 +4,17 @@ const images = document.getElementsByClassName("image");
 let imageMove;
 for (let i = 0; i < images.length; i++) {
     const img = images[i];
+    console.log("image:",img)
     img.addEventListener("dragstart", (e) => {
         imageMove = img;
-        console.log(imageMove);
-        console.log(e.target);
+        console.log("Move:",imageMove);
     })
     img.addEventListener("dragover", (e) => {
         e.preventDefault();
     })
     img.addEventListener("drop", (e) => {
         e.preventDefault();
-        console.log(e.target);
+        console.log("Target:",e.target);
         // e.target.appendChild(imageMove);
         if(imageMove !== img){
            let storeImage = document.createElement("div");
